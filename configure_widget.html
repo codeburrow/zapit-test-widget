@@ -1,0 +1,41 @@
+<html>
+	<head><title>PHP/Javascript - Widget</title>
+	<style type="text/css">
+		body{font-family:trebuchet ms;font-size:12px;}
+		input{padding:5px;border:1px solid #ccc}
+		select{padding:5px;border:1px solid #ccc}
+	</style>
+	</head>
+	<body>
+	
+		<h3>Configure Widget</h3>
+		
+		Widget Title: <input onblur="generate_widget_code()" type="text" size="40" value="This is the Widget TITLE" id="title"><br/><br/>
+		Size: <input type="text" onblur="generate_widget_code()" size="3" maxlength="3" value="500" id="width">&nbsp;&nbsp;X&nbsp;&nbsp;<input type="text" value="100" size="3" maxlength="3" onblur="generate_widget_code()" id="height"><br/><br/>
+		Country: <select id="country" onblur="generate_widget_code()">
+			<option value="California">California</option>
+			<option value="Australia">Australia</option>
+			<option value="India">India</option>
+			<option value="United Kingdom">United Kingdom</option>
+		</select><br/><br/>
+		Gender: <select id="gender" onblur="generate_widget_code()">
+			<option value="m">Male</option>
+			<option value="f">Female</option>
+		</select><br/><br/>
+	
+	
+		Copy and paste the code below:<br/>
+		<textarea id="widget_script" style="border:1px solid #ccc;padding:5px;width:600px" rows="5" readonly></textarea>
+		<script type="text/javascript">
+			var head=('<div id="wd_id"></div><script type="text/javascript" src="http://localhost/hasanResearch/php/widgets/widet.js"><\/script><script type="text/javascript">init_widget(');
+			var body='500,100,"California","f","This is the Widget TITLE"';
+			var footer=(')<\/script>');
+			function generate_widget_code(){
+				body=document.getElementById("width").value+','+document.getElementById("height").value+',"'+document.getElementById("country").value+'","'+document.getElementById("gender").value+'","'+document.getElementById("title").value+'"';
+				
+				document.getElementById("widget_script").innerHTML=head+body+footer
+			}
+			document.getElementById("widget_script").innerHTML=head+body+footer
+			</script>
+	</body>
+</html>
