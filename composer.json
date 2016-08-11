@@ -1,0 +1,24 @@
+{
+  "name": "antony/zapit-test-widget",
+  "description": "Testing zapit widget generator",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Antony Kalogeropoulos",
+      "email": "anthonykalogeropoulos@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-gd": "*",
+    "php": "^7.0.0",
+    "twig/twig": "~1.0",
+    "swiftmailer/swiftmailer": "^5.4",
+    "vlucas/phpdotenv": "^2.3",
+    "ccampbell/chromephp": "^4.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zapit\\": "app/"
+    }
+  }
+}
